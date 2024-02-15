@@ -4,12 +4,11 @@
 
 CREATE TABLE products (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  code VARCHAR(15),
   name VARCHAR(255),
-  description_id TEXT,
-  merken_id TEXT,
+  beschrijving_id TEXT,
+  quantity_id NUMERIC (5),
+  code VARCHAR(15),
   price NUMERIC(10, 2),
-  quantity_id NUMERIC (5)
   pittigheid_id TEXT,
   soortnoedel_id TEXT,
   smaak_id TEXT 
@@ -63,14 +62,17 @@ insert into products (name, beschrijving_id , quantity_id, code, price, pittighe
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Samyang Hot chicken ramen cheese', 1 , 2, '67371', 1.61, 2,1,3);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Samyang Hot chicken ramen, 2x spicy', 1, 2, '63599', 1.61 ,1 ,1 ,1);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Samyang Hot chicken ramen, habenero en limoen', 1, 2, '64928', 1.81 ,1 ,1 ,7);
+insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Samyang Instant Ramen met Extreem Pittige Kip', 1, 2, '57452', 1.15 ,1 ,1 ,1);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Indomie Instant noedels Kip Smaak', 2,1, '21338', 0.70, 3, 2, 1);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Indomie Instant noedels Garnalen Smaak', 2, 1,  '20029', 0.70 , 3, 2, 4);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Indomie Instant noedels Groenten Smaak',2 ,1, '20156', 0.70, 3, 2, 5);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Nongshim Shin ramyun noodles Beef',3 ,3, '97651', 1.49, 1, 1, 6);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Nongshim Shin ramyun noodles Kimchi',3 ,3, '98596', 1.49, 2, 1, 8);
+insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Nongshim Shin ramyun noodles Black',3 ,3, '92127', 2.90, 2, 1, 9);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Shrimp flavour instant noodle',4 ,4, '85463', 0.59, 3, 2, 4);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Vegetable flavour instant noodle',4 ,4, '86759', 0.59, 3, 2, 5);
-
+insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Duck flavour instant noodle',4 ,4, '90379', 0.70, 3, 2, 10);
+insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Curry flavour instant noodle',4 ,4, '90676', 0.68, 3, 2, 11);
 
 /* dit is de n op m relatie */
 
@@ -100,6 +102,9 @@ insert into smaak (soort) values ('groente');
 insert into smaak (soort) values ('beef');
 insert into smaak (soort) values ('Habenero en Limoen');
 insert into smaak (soort) values ('Kimchi');
+insert into smaak (soort) values ('Zwarte knoflook');
+insert into smaak (soort) values ('Eend');
+insert into smaak (soort) values ('Curry');
 
 
 insert into soortnoedel (dikte) values ('ramen');
