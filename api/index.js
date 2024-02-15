@@ -67,7 +67,7 @@ function getCategories(request, response) {
 function getProducts(request, response) {
   console.log('API ontvangt /api/products/', request.query)
   let data = []
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price FROM products ORDER BY name ASC')
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.beschrijving_id AS beschrijving, products.quantity_id AS quantity, products.code AS code, products.price AS price, products.pittigheid_id AS pittgheid, products.soortnoedel_id AS soortnoedel, products.smaak_id AS smaak FROM products ORDER BY name ASC')
   data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
