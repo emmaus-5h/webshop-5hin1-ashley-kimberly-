@@ -15,6 +15,12 @@ CREATE TABLE products (
   smaak_id TEXT 
 );
 
+CREATE TABLE beschrijving (
+  id INTEGER PRIMARY KEY autoincrement,
+  merken_id TEXT,
+  description_id
+);
+
 CREATE TABLE merken (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
   name VARCHAR(255),
@@ -22,30 +28,26 @@ CREATE TABLE merken (
 ); 
 
 CREATE TABLE pittigheid (
-  id INTERGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   hoeveelheid TEXT
 );
 
 CREATE TABLE smaak(
-  id INTERGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY autoincrement,
   soort TEXT
 );
 
 CREATE TABLE soortnoedel(
-  id INTERGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY autoincrement,
   dikte TEXT
 );
 
 CREATE TABLE quantity (
-  id INTERGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY autoincrement,
   grootte TEXT 
 );
 
-CREATE TABLE beschrijving (
-  id INTERGER PRIMARY KEY autoincrement,
-  merken_id TEXT.
-  description_id
-);
+
 
 
 --
@@ -67,7 +69,7 @@ insert into products (name, beschrijving_id, quantity_id, code, price, pittighei
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Nongshim Shin ramyun noodles Beef',3 ,3, '97651', 1.49, 1, 1, 6);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Nongshim Shin ramyun noodles Kimchi',3 ,3, '98596', 1.49, 2, 1, 8);
 insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Shrimp flavour instant noodle',4 ,4, '85463', 0.59, 3, 2, 4);
-insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Vegetable flavour instant noodle',4 ,4, '86759', 0.59, 3, 2, 4);
+insert into products (name, beschrijving_id, quantity_id, code, price, pittigheid_id, soortnoedel_id, smaak_id) values ('Yum Yum Vegetable flavour instant noodle',4 ,4, '86759', 0.59, 3, 2, 5);
 
 
 /* dit is de n op m relatie */
@@ -77,10 +79,11 @@ insert into beschrijving (merken_id, description_id) values (2 , 'Lekkerste goed
 insert into beschrijving (merken_id, description_id) values (3 , 'De lekkerste pittige vegetarische koreaanse instant noodlesoep.');
 insert into beschrijving (merken_id, description_id) values (4 , 'Yum Yum is de lekkerstee Thaise instant noodlesoep');
 
-insert into merken (naam) values ('Buldak');
-insert into merken (naam) values ('Indomie');
-insert into merken (naam) values ('Nongshim');
-insert into merken (naam) values ('YumYum');
+insert into merken (name) values ('Buldak');
+insert into merken (name) values ('Indomie');
+insert into merken (name) values ('Nongshim');
+insert into merken (name) values ('YumYum');
+
 
 
 /* dit is de 1 op n relatie */
@@ -99,8 +102,8 @@ insert into smaak (soort) values ('Habenero en Limoen');
 insert into smaak (soort) values ('Kimchi');
 
 
-insert into soortnoedel_id (dikte) values ('ramen');
-insert into soortnoedel_id (dikte) values ('bamisoep');
+insert into soortnoedel (dikte) values ('ramen');
+insert into soortnoedel (dikte) values ('bamisoep');
 
 insert into quantity (grootte) values ('70');
 insert into quantity (grootte) values ('130');
