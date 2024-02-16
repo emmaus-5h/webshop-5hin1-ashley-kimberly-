@@ -31,17 +31,17 @@ CREATE TABLE pittigheid (
 );
 
 CREATE TABLE smaak(
-  id INTEGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   soort TEXT
 );
 
 CREATE TABLE soortnoedel(
-  id INTEGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   dikte TEXT
 );
 
 CREATE TABLE quantity (
-  id INTEGER PRIMARY KEY autoincrement,
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
   grootte TEXT 
 );
 
@@ -113,4 +113,7 @@ insert into quantity (grootte) values ('130');
 insert into quantity (grootte) values ('120');
 insert into quantity (grootte) values ('60');
 
+SELECT * FROM quantity;
+SELECT * FROM beschrijving;
 
+SELECT
