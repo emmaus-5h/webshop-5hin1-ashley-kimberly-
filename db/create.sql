@@ -16,14 +16,13 @@ CREATE TABLE products (
 
 CREATE TABLE beschrijving (
   id INTEGER PRIMARY KEY autoincrement,
-  merken_id TEXT,
-  description_id
+  merken_id INTERGER,
+  description_id TEXT
 );
 
 CREATE TABLE merken (
   id INTEGER PRIMARY KEY AUTOINCREMENT,
-  name VARCHAR(255),
-  description TEXT
+  name TEXT
 ); 
 
 CREATE TABLE pittigheid (
@@ -76,7 +75,7 @@ insert into products (name, beschrijving_id, quantity_id, code, price, pittighei
 
 /* dit is de n op m relatie */
 
-insert into beschrijving (merken_id, description_id) values (1, 'Hou jij van  pittig eten en van noedels. Koop dan Buldak noedels!');
+insert into beschrijving (merken_id, description_id) values (1, 'Hou jij van  pittig eten en van noedels? Koop dan Buldak noedels!');
 insert into beschrijving (merken_id, description_id) values (2 , 'Lekkerste goedkope noedels!');
 insert into beschrijving (merken_id, description_id) values (3 , 'De lekkerste pittige vegetarische koreaanse instant noodlesoep.');
 insert into beschrijving (merken_id, description_id) values (4 , 'Yum Yum is de lekkerstee Thaise instant noodlesoep');
@@ -85,7 +84,6 @@ insert into merken (name) values ('Buldak');
 insert into merken (name) values ('Indomie');
 insert into merken (name) values ('Nongshim');
 insert into merken (name) values ('YumYum');
-
 
 
 /* dit is de 1 op n relatie */
