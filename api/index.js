@@ -26,7 +26,7 @@ app.use(express.static('web'))
 
 // definieer startpunten voor de API-server
 app.get('/api/echo', echoRequest)
-app.get('/api/categories', getCategories)
+app.get('/api/beschrijving', getBeschrijving)
 app.get('/api/products', getProducts)
 app.get('/api/products/:id', getProductById)
 //app.get('/api/products/:id/related', db.getRelatedProductsById)
@@ -54,14 +54,14 @@ function echoRequest(request, response) {
   response.status(200).send(request.query)
 }
 
-function getCategories(request, response) {
-  console.log('API ontvangt /api/categories/')
+function getBeschrijving(request, response) {
+  console.log('API ontvangt /api/beschrijving/')
   // TODO: breid database uit zodat onderstaande query een lijstje categoriën levert.
-  const sqlOpdracht = db.prepare('SELECT categories.name AS category_name FROM categories ORDER BY id ASC')
+  const sqlOpdracht = db.prepare('SELECT merken_id AS merk_name FROM beschrijving ORDER BY id ASC')
   const data = sqlOpdracht.all()
   // console.log(JSON.stringify(data, null, 2))
   response.status(200).send(data)
-  console.log('API verstuurt /api/categories/')
+  console.log('API verstuurt /api/beschrijving/')
 }
 
 function getProducts(request, response) {
@@ -78,7 +78,7 @@ function getProductById(request, response) {
   console.log('API ontvangt /api/products/:id', request.query)
   let data = []
   const product_id = parseInt(request.params.id)
-  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.description AS description, products.code AS code, products.price AS price FROM products WHERE id = ?')
+  const sqlOpdracht = db.prepare('SELECT products.id AS id, products.name AS name, products.beschrijving AS beschrijving, products.code AS code, products.price AS price FROM products WHERE id = ?')
   data = sqlOpdracht.all(product_id)
   response.status(200).json(data[0])
 }

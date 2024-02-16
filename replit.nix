@@ -1,5 +1,6 @@
 { pkgs }: {
     deps = [
+      pkgs.SELECT * FROM products;
         pkgs.sqlite.bin
         pkgs.nodejs-18_x
         pkgs.yarn
