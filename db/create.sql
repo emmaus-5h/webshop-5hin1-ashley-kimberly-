@@ -113,7 +113,3 @@ insert into quantity (grootte) values ('130');
 insert into quantity (grootte) values ('120');
 insert into quantity (grootte) values ('60');
 
-SELECT * FROM quantity;
-SELECT * FROM beschrijving;
-
-SELECT
