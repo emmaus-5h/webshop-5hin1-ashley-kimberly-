@@ -16,7 +16,7 @@ CREATE TABLE products (
 
 CREATE TABLE beschrijving (
   id INTEGER PRIMARY KEY autoincrement,
-  merken_id INTERGER,
+  merken_id INTEGER,
   description_id TEXT
 );
 
