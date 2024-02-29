@@ -142,7 +142,7 @@ const deleteProduct = (request, response) => {
     }
   })
 }
-*/
+
 
 
 // ---------------------------------
